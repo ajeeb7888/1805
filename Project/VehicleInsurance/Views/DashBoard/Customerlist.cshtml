@@ -1,0 +1,118 @@
+﻿@model IEnumerable<VehicleInsurance.CUSTOMER>
+
+@{
+    ViewBag.Title = "Customerlist";
+    Layout = "~/Views/Shared/_hOMELayoutPage.cshtml";
+}
+
+<h2>Customerlist</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_Add)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_ph_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_version)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_warranty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_boby_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_engine_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_add_prove)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_Add)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_ph_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_warranty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_boby_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_engine_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_add_prove)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cus_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cus_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cus_Id })
+        </td>
+    </tr>
+}
+
+</table>

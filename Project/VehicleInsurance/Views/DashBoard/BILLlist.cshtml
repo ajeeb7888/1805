@@ -1,0 +1,100 @@
+﻿@model IEnumerable<VehicleInsurance.cus_bill_info>
+
+@{
+    ViewBag.Title = "BILLlist";
+    Layout = "~/Views/Shared/_hOMELayoutPage.cshtml";
+}
+
+<h2>BILLlist</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_add_prove)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_pho_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bill_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_rate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_body_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.veh_eng_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_add_prove)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_pho_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bill_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_rate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_body_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.veh_eng_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.amount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cus_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cus_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cus_id })
+        </td>
+    </tr>
+}
+
+</table>

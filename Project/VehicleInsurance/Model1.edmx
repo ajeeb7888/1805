@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="claim_details">
+          <Key>
+            <PropertyRef Name="claim_num" />
+          </Key>
+          <Property Name="claim_num" Type="int" Nullable="false" />
+          <Property Name="policy_num" Type="int" Nullable="false" />
+          <Property Name="policy_start_date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="policy_end_date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cus_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="place_of_accident" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date_of_accident" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="insured_amount" Type="int" Nullable="false" />
+          <Property Name="claimable_amount" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\AATIKA\DESKTOP\VEHICLEINSURANCE\VEHICLEINSURANCE\APP_DATA\DATABASE1.MDF.dbo.comp_exp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="comp_exp">
+          <Key>
+            <PropertyRef Name="comp_expenses" />
+            <PropertyRef Name="type_of_expenses" />
+            <PropertyRef Name="amount_of_exp" />
+          </Key>
+          <Property Name="comp_expenses" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="type_of_expenses" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="amount_of_exp" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cus_bill_info">
+          <Key>
+            <PropertyRef Name="cus_id" />
+          </Key>
+          <Property Name="cus_id" Type="int" Nullable="false" />
+          <Property Name="cus_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="policy_num" Type="int" Nullable="false" />
+          <Property Name="cus_add_prove" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cus_pho_num" Type="int" Nullable="false" />
+          <Property Name="bill_no" Type="int" Nullable="false" />
+          <Property Name="veh_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_rate" Type="int" Nullable="false" />
+          <Property Name="veh_body_num" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_eng_num" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="cus_Id" />
+          </Key>
+          <Property Name="cus_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cus_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cus_Add" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cus_ph_num" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="policy_num" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="policy_date" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="policy_duration" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_num" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_model" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_version" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_rate" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_warranty" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_boby_num" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_engine_num" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="cus_add_prove" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estimate">
+          <Key>
+            <PropertyRef Name="cus_id" />
+          </Key>
+          <Property Name="cus_id" Type="int" Nullable="false" />
+          <Property Name="Estimate_num" Type="int" Nullable="false" />
+          <Property Name="cus_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="cus_phone_num" Type="int" Nullable="false" />
+          <Property Name="veh_name" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_model" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_rate" Type="int" Nullable="false" />
+          <Property Name="veh_warrranty" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="veh_policy_type" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="signup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="10" />
+          <Property Name="password" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Vehicle_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="veh_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_owner_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_version" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_rate" Type="int" Nullable="false" />
+          <Property Name="veh_body_num" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_engine_num" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="veh_num" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1ModelStoreContainer">
+          <EntitySet Name="claim_details" EntityType="Self.claim_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cus_bill_info" EntityType="Self.cus_bill_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estimate" EntityType="Self.estimate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="signup" EntityType="Self.signup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle_info" EntityType="Self.Vehicle_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="comp_exp" EntityType="Self.comp_exp" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [comp_exp].[comp_expenses] AS [comp_expenses], 
+    [comp_exp].[type_of_expenses] AS [type_of_expenses], 
+    [comp_exp].[amount_of_exp] AS [amount_of_exp]
+    FROM [dbo].[comp_exp] AS [comp_exp]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="claim_details">
+          <Key>
+            <PropertyRef Name="claim_num" />
+          </Key>
+          <Property Name="claim_num" Type="Int32" Nullable="false" />
+          <Property Name="policy_num" Type="Int32" Nullable="false" />
+          <Property Name="policy_start_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="policy_end_date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cus_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="place_of_accident" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_of_accident" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="insured_amount" Type="Int32" Nullable="false" />
+          <Property Name="claimable_amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cus_bill_info">
+          <Key>
+            <PropertyRef Name="cus_id" />
+          </Key>
+          <Property Name="cus_id" Type="Int32" Nullable="false" />
+          <Property Name="cus_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="policy_num" Type="Int32" Nullable="false" />
+          <Property Name="cus_add_prove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cus_pho_num" Type="Int32" Nullable="false" />
+          <Property Name="bill_no" Type="Int32" Nullable="false" />
+          <Property Name="veh_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_rate" Type="Int32" Nullable="false" />
+          <Property Name="veh_body_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_eng_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="cus_Id" />
+          </Key>
+          <Property Name="cus_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cus_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cus_Add" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cus_ph_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="policy_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="policy_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="policy_duration" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_model" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_version" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_rate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_warranty" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_boby_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_engine_num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="cus_add_prove" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estimate">
+          <Key>
+            <PropertyRef Name="cus_id" />
+          </Key>
+          <Property Name="cus_id" Type="Int32" Nullable="false" />
+          <Property Name="Estimate_num" Type="Int32" Nullable="false" />
+          <Property Name="cus_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="cus_phone_num" Type="Int32" Nullable="false" />
+          <Property Name="veh_name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_model" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_rate" Type="Int32" Nullable="false" />
+          <Property Name="veh_warrranty" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="veh_policy_type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="signup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Vehicle_info">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="veh_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_owner_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_version" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_rate" Type="Int32" Nullable="false" />
+          <Property Name="veh_body_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_engine_num" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="veh_num" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="comp_exp">
+          <Key>
+            <PropertyRef Name="comp_expenses" />
+            <PropertyRef Name="type_of_expenses" />
+            <PropertyRef Name="amount_of_exp" />
+          </Key>
+          <Property Name="comp_expenses" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="type_of_expenses" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amount_of_exp" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="claim_details" EntityType="Self.claim_details" />
+          <EntitySet Name="cus_bill_info" EntityType="Self.cus_bill_info" />
+          <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+          <EntitySet Name="estimates" EntityType="Self.estimate" />
+          <EntitySet Name="signups" EntityType="Self.signup" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="Vehicle_info" EntityType="Self.Vehicle_info" />
+          <EntitySet Name="comp_exp" EntityType="Self.comp_exp" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+          <EntitySetMapping Name="claim_details">
+            <EntityTypeMapping TypeName="Database1Model.claim_details">
+              <MappingFragment StoreEntitySet="claim_details">
+                <ScalarProperty Name="claim_num" ColumnName="claim_num" />
+                <ScalarProperty Name="policy_num" ColumnName="policy_num" />
+                <ScalarProperty Name="policy_start_date" ColumnName="policy_start_date" />
+                <ScalarProperty Name="policy_end_date" ColumnName="policy_end_date" />
+                <ScalarProperty Name="cus_name" ColumnName="cus_name" />
+                <ScalarProperty Name="place_of_accident" ColumnName="place_of_accident" />
+                <ScalarProperty Name="date_of_accident" ColumnName="date_of_accident" />
+                <ScalarProperty Name="insured_amount" ColumnName="insured_amount" />
+                <ScalarProperty Name="claimable_amount" ColumnName="claimable_amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cus_bill_info">
+            <EntityTypeMapping TypeName="Database1Model.cus_bill_info">
+              <MappingFragment StoreEntitySet="cus_bill_info">
+                <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+                <ScalarProperty Name="cus_name" ColumnName="cus_name" />
+                <ScalarProperty Name="policy_num" ColumnName="policy_num" />
+                <ScalarProperty Name="cus_add_prove" ColumnName="cus_add_prove" />
+                <ScalarProperty Name="cus_pho_num" ColumnName="cus_pho_num" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+                <ScalarProperty Name="veh_name" ColumnName="veh_name" />
+                <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+                <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+                <ScalarProperty Name="veh_body_num" ColumnName="veh_body_num" />
+                <ScalarProperty Name="veh_eng_num" ColumnName="veh_eng_num" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="Database1Model.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="cus_Id" ColumnName="cus_Id" />
+                <ScalarProperty Name="cus_Name" ColumnName="cus_Name" />
+                <ScalarProperty Name="cus_Add" ColumnName="cus_Add" />
+                <ScalarProperty Name="cus_ph_num" ColumnName="cus_ph_num" />
+                <ScalarProperty Name="policy_num" ColumnName="policy_num" />
+                <ScalarProperty Name="policy_date" ColumnName="policy_date" />
+                <ScalarProperty Name="policy_duration" ColumnName="policy_duration" />
+                <ScalarProperty Name="veh_num" ColumnName="veh_num" />
+                <ScalarProperty Name="veh_name" ColumnName="veh_name" />
+                <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+                <ScalarProperty Name="veh_version" ColumnName="veh_version" />
+                <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+                <ScalarProperty Name="veh_warranty" ColumnName="veh_warranty" />
+                <ScalarProperty Name="veh_boby_num" ColumnName="veh_boby_num" />
+                <ScalarProperty Name="veh_engine_num" ColumnName="veh_engine_num" />
+                <ScalarProperty Name="cus_add_prove" ColumnName="cus_add_prove" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estimates">
+            <EntityTypeMapping TypeName="Database1Model.estimate">
+              <MappingFragment StoreEntitySet="estimate">
+                <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+                <ScalarProperty Name="Estimate_num" ColumnName="Estimate_num" />
+                <ScalarProperty Name="cus_name" ColumnName="cus_name" />
+                <ScalarProperty Name="cus_phone_num" ColumnName="cus_phone_num" />
+                <ScalarProperty Name="veh_name" ColumnName="veh_name" />
+                <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+                <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+                <ScalarProperty Name="veh_warrranty" ColumnName="veh_warrranty" />
+                <ScalarProperty Name="veh_policy_type" ColumnName="veh_policy_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="signups">
+            <EntityTypeMapping TypeName="Database1Model.signup">
+              <MappingFragment StoreEntitySet="signup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="Database1Model.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle_info">
+            <EntityTypeMapping TypeName="Database1Model.Vehicle_info">
+              <MappingFragment StoreEntitySet="Vehicle_info">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="veh_Name" ColumnName="veh_Name" />
+                <ScalarProperty Name="veh_owner_name" ColumnName="veh_owner_name" />
+                <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+                <ScalarProperty Name="veh_version" ColumnName="veh_version" />
+                <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+                <ScalarProperty Name="veh_body_num" ColumnName="veh_body_num" />
+                <ScalarProperty Name="veh_engine_num" ColumnName="veh_engine_num" />
+                <ScalarProperty Name="veh_num" ColumnName="veh_num" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="comp_exp">
+            <EntityTypeMapping TypeName="Database1Model.comp_exp">
+              <MappingFragment StoreEntitySet="comp_exp">
+                <ScalarProperty Name="comp_expenses" ColumnName="comp_expenses" />
+                <ScalarProperty Name="type_of_expenses" ColumnName="type_of_expenses" />
+                <ScalarProperty Name="amount_of_exp" ColumnName="amount_of_exp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

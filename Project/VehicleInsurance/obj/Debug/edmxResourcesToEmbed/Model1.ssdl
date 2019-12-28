@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="claim_details">
+    <Key>
+      <PropertyRef Name="claim_num" />
+    </Key>
+    <Property Name="claim_num" Type="int" Nullable="false" />
+    <Property Name="policy_num" Type="int" Nullable="false" />
+    <Property Name="policy_start_date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="policy_end_date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cus_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="place_of_accident" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date_of_accident" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="insured_amount" Type="int" Nullable="false" />
+    <Property Name="claimable_amount" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\AATIKA\DESKTOP\VEHICLEINSURANCE\VEHICLEINSURANCE\APP_DATA\DATABASE1.MDF.dbo.comp_exp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="comp_exp">
+    <Key>
+      <PropertyRef Name="comp_expenses" />
+      <PropertyRef Name="type_of_expenses" />
+      <PropertyRef Name="amount_of_exp" />
+    </Key>
+    <Property Name="comp_expenses" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="type_of_expenses" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amount_of_exp" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cus_bill_info">
+    <Key>
+      <PropertyRef Name="cus_id" />
+    </Key>
+    <Property Name="cus_id" Type="int" Nullable="false" />
+    <Property Name="cus_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="policy_num" Type="int" Nullable="false" />
+    <Property Name="cus_add_prove" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cus_pho_num" Type="int" Nullable="false" />
+    <Property Name="bill_no" Type="int" Nullable="false" />
+    <Property Name="veh_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_rate" Type="int" Nullable="false" />
+    <Property Name="veh_body_num" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_eng_num" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="amount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTOMER">
+    <Key>
+      <PropertyRef Name="cus_Id" />
+    </Key>
+    <Property Name="cus_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cus_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cus_Add" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cus_ph_num" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="policy_num" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="policy_date" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="policy_duration" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_num" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_model" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_version" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_rate" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_warranty" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_boby_num" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_engine_num" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="cus_add_prove" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estimate">
+    <Key>
+      <PropertyRef Name="cus_id" />
+    </Key>
+    <Property Name="cus_id" Type="int" Nullable="false" />
+    <Property Name="Estimate_num" Type="int" Nullable="false" />
+    <Property Name="cus_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="cus_phone_num" Type="int" Nullable="false" />
+    <Property Name="veh_name" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_model" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_rate" Type="int" Nullable="false" />
+    <Property Name="veh_warrranty" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="veh_policy_type" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="signup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="10" />
+    <Property Name="password" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Vehicle_info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="veh_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_owner_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_model" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_version" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_rate" Type="int" Nullable="false" />
+    <Property Name="veh_body_num" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_engine_num" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="veh_num" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="claim_details" EntityType="Self.claim_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cus_bill_info" EntityType="Self.cus_bill_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estimate" EntityType="Self.estimate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="signup" EntityType="Self.signup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicle_info" EntityType="Self.Vehicle_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="comp_exp" EntityType="Self.comp_exp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [comp_exp].[comp_expenses] AS [comp_expenses], 
+    [comp_exp].[type_of_expenses] AS [type_of_expenses], 
+    [comp_exp].[amount_of_exp] AS [amount_of_exp]
+    FROM [dbo].[comp_exp] AS [comp_exp]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

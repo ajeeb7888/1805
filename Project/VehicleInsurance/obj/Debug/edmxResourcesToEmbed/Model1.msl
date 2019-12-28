@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+    <EntitySetMapping Name="claim_details">
+      <EntityTypeMapping TypeName="Database1Model.claim_details">
+        <MappingFragment StoreEntitySet="claim_details">
+          <ScalarProperty Name="claim_num" ColumnName="claim_num" />
+          <ScalarProperty Name="policy_num" ColumnName="policy_num" />
+          <ScalarProperty Name="policy_start_date" ColumnName="policy_start_date" />
+          <ScalarProperty Name="policy_end_date" ColumnName="policy_end_date" />
+          <ScalarProperty Name="cus_name" ColumnName="cus_name" />
+          <ScalarProperty Name="place_of_accident" ColumnName="place_of_accident" />
+          <ScalarProperty Name="date_of_accident" ColumnName="date_of_accident" />
+          <ScalarProperty Name="insured_amount" ColumnName="insured_amount" />
+          <ScalarProperty Name="claimable_amount" ColumnName="claimable_amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cus_bill_info">
+      <EntityTypeMapping TypeName="Database1Model.cus_bill_info">
+        <MappingFragment StoreEntitySet="cus_bill_info">
+          <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+          <ScalarProperty Name="cus_name" ColumnName="cus_name" />
+          <ScalarProperty Name="policy_num" ColumnName="policy_num" />
+          <ScalarProperty Name="cus_add_prove" ColumnName="cus_add_prove" />
+          <ScalarProperty Name="cus_pho_num" ColumnName="cus_pho_num" />
+          <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+          <ScalarProperty Name="veh_name" ColumnName="veh_name" />
+          <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+          <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+          <ScalarProperty Name="veh_body_num" ColumnName="veh_body_num" />
+          <ScalarProperty Name="veh_eng_num" ColumnName="veh_eng_num" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTOMERs">
+      <EntityTypeMapping TypeName="Database1Model.CUSTOMER">
+        <MappingFragment StoreEntitySet="CUSTOMER">
+          <ScalarProperty Name="cus_Id" ColumnName="cus_Id" />
+          <ScalarProperty Name="cus_Name" ColumnName="cus_Name" />
+          <ScalarProperty Name="cus_Add" ColumnName="cus_Add" />
+          <ScalarProperty Name="cus_ph_num" ColumnName="cus_ph_num" />
+          <ScalarProperty Name="policy_num" ColumnName="policy_num" />
+          <ScalarProperty Name="policy_date" ColumnName="policy_date" />
+          <ScalarProperty Name="policy_duration" ColumnName="policy_duration" />
+          <ScalarProperty Name="veh_num" ColumnName="veh_num" />
+          <ScalarProperty Name="veh_name" ColumnName="veh_name" />
+          <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+          <ScalarProperty Name="veh_version" ColumnName="veh_version" />
+          <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+          <ScalarProperty Name="veh_warranty" ColumnName="veh_warranty" />
+          <ScalarProperty Name="veh_boby_num" ColumnName="veh_boby_num" />
+          <ScalarProperty Name="veh_engine_num" ColumnName="veh_engine_num" />
+          <ScalarProperty Name="cus_add_prove" ColumnName="cus_add_prove" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimates">
+      <EntityTypeMapping TypeName="Database1Model.estimate">
+        <MappingFragment StoreEntitySet="estimate">
+          <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+          <ScalarProperty Name="Estimate_num" ColumnName="Estimate_num" />
+          <ScalarProperty Name="cus_name" ColumnName="cus_name" />
+          <ScalarProperty Name="cus_phone_num" ColumnName="cus_phone_num" />
+          <ScalarProperty Name="veh_name" ColumnName="veh_name" />
+          <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+          <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+          <ScalarProperty Name="veh_warrranty" ColumnName="veh_warrranty" />
+          <ScalarProperty Name="veh_policy_type" ColumnName="veh_policy_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="signups">
+      <EntityTypeMapping TypeName="Database1Model.signup">
+        <MappingFragment StoreEntitySet="signup">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="Database1Model.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehicle_info">
+      <EntityTypeMapping TypeName="Database1Model.Vehicle_info">
+        <MappingFragment StoreEntitySet="Vehicle_info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="veh_Name" ColumnName="veh_Name" />
+          <ScalarProperty Name="veh_owner_name" ColumnName="veh_owner_name" />
+          <ScalarProperty Name="veh_model" ColumnName="veh_model" />
+          <ScalarProperty Name="veh_version" ColumnName="veh_version" />
+          <ScalarProperty Name="veh_rate" ColumnName="veh_rate" />
+          <ScalarProperty Name="veh_body_num" ColumnName="veh_body_num" />
+          <ScalarProperty Name="veh_engine_num" ColumnName="veh_engine_num" />
+          <ScalarProperty Name="veh_num" ColumnName="veh_num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comp_exp">
+      <EntityTypeMapping TypeName="Database1Model.comp_exp">
+        <MappingFragment StoreEntitySet="comp_exp">
+          <ScalarProperty Name="comp_expenses" ColumnName="comp_expenses" />
+          <ScalarProperty Name="type_of_expenses" ColumnName="type_of_expenses" />
+          <ScalarProperty Name="amount_of_exp" ColumnName="amount_of_exp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

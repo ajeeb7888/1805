@@ -1,0 +1,76 @@
+﻿@model IEnumerable<VehicleInsurance.claim_details>
+
+@{
+    ViewBag.Title = "claimlist";
+    Layout = "~/Views/Shared/_hOMELayoutPage.cshtml";
+}
+
+<h2>claimlist</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_start_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.policy_end_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cus_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.place_of_accident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_of_accident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.insured_amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.claimable_amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_start_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.policy_end_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cus_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.place_of_accident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_of_accident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.insured_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.claimable_amount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.claim_num }) |
+            @Html.ActionLink("Details", "Details", new { id=item.claim_num }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.claim_num })
+        </td>
+    </tr>
+}
+
+</table>
